@@ -8798,7 +8798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06630bfe7b71044c49f2f36968b785d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeEndGame
-  gameTime: 10
+  gameTime: 120
   timerValueGO: {fileID: 1025213321}
   scoreManager: {fileID: 715831902}
 --- !u!114 &1025213321
