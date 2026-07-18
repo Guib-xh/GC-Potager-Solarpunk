@@ -1,35 +1,39 @@
 using System.Collections.Generic;
-using TMPro;
-using UI;
-using Unity.VisualScripting;
+using Managers;
 using UnityEngine;
 
-public class LeaderboardUI : MonoBehaviour
+namespace UI
 {
-    public GameObject scoreRawPrefab;
-    public Transform parent;
-
-    private List<GameObject> rows = new List<GameObject>();
-    void OnEnable()
+    public class LeaderboardUI : MonoBehaviour
     {
-        List<ScoreEntry> scores = LeaderboardStorage.GetScores();
+        public GameObject scoreRawPrefab;
+        public Transform parent;
 
-        foreach (ScoreEntry score in scores)
-        {
-            GameObject row = Instantiate(scoreRawPrefab, parent);
-            row.GetComponent<ScoreRowUI>().pseudoTMP.text = score.pseudo;
-            row.GetComponent<ScoreRowUI>().scoreTMP.text = score.score.ToString();
-            rows.Add(row);
-        }
-    }
+        private List<GameObject> rows = new List<GameObject>();
 
-    void OnDisable()
-    {
-        foreach (GameObject row in rows)
+        void OnEnable()
         {
-            if (row != null) Destroy(row);
+            List<ScoreEntry> scores = LeaderboardStorage.GetScores();
+
+            foreach (ScoreEntry score in scores)
+            {
+                GameObject row = Instantiate(scoreRawPrefab, parent);
+                row.GetComponent<ScoreRowUI>().pseudoTMP.text = score.pseudo;
+                row.GetComponent<ScoreRowUI>().scoreTMP.text = score.score.ToString();
+                rows.Add(row);
+            }
         }
-        rows.Clear();
+
+        void OnDisable()
+        {
+            foreach (GameObject row in rows)
+            {
+                if (row != null) Destroy(row);
+            }
+
+            rows.Clear();
+        }
+
     }
     
 }

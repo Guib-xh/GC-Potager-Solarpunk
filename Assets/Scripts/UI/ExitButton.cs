@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitButton : MonoBehaviour
+namespace UI
 {
-    public void Exit()
+    public class ExitButton : MonoBehaviour
     {
-        Application.Quit();
-    }
-    
-    public void GoToMainMenu()
-    {
-        SceneManager.LoadScene(0);
+        public void Exit()
+        {
+            Application.Quit();
+        }
+
+        public void GoToMainMenu()
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

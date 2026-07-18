@@ -71,6 +71,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 649c1160fadff4644b0db50d2c688019, type: 3}
       insertIndex: -1
       addedObject: {fileID: -9096523171031286846}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 649c1160fadff4644b0db50d2c688019, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6177221118128096861}
   m_SourcePrefab: {fileID: 100100000, guid: 649c1160fadff4644b0db50d2c688019, type: 3}
 --- !u!1 &250842772482938442 stripped
 GameObject:
@@ -99,3 +102,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1682360018315694226, guid: 649c1160fadff4644b0db50d2c688019, type: 3}
+--- !u!114 &-6177221118128096861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250842772482938442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b14c9a77854ff3b223683e5e34095f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.FallingFieldStart
+  height: 20
+  fallingTime: 1
+  randomDelta: 1
+  currentEase: 30

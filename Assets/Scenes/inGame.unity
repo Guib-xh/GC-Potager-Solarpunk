@@ -2658,7 +2658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06630bfe7b71044c49f2f36968b785d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
-  gameTime: 120
+  gameTime: 121
   timerValueGO: {fileID: 1025213321}
   scoreManager: {fileID: 715831902}
 --- !u!4 &270923391
@@ -5752,6 +5752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82b38cd629c944e0b5a730593253009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  countDuration: 0.5
   scoreValueGO: {fileID: 714201498}
 --- !u!1001 &715454570
 PrefabInstance:
@@ -5839,6 +5840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82b38cd629c944e0b5a730593253009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  countDuration: 0.5
   scoreValueGO: {fileID: 714201498}
 --- !u!4 &715831903
 Transform:
@@ -7944,8 +7946,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1897104842}
-        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
-        m_MethodName: SwitchPauseStatus
+        m_TargetAssemblyTypeName: Managers.PauseManager, Assembly-CSharp
+        m_MethodName: OpenPauseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7953,19 +7955,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1353019855}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &905122680
 MonoBehaviour:
@@ -10234,11 +10224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5079047048841286207, guid: c15012a8668d042dda82b92ff920fc93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5079047048841286207, guid: c15012a8668d042dda82b92ff920fc93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5079047048841286207, guid: c15012a8668d042dda82b92ff920fc93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -10247,7 +10237,7 @@ PrefabInstance:
     - target: {fileID: 5079047048841286207, guid: c15012a8668d042dda82b92ff920fc93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1353019855}
+      objectReference: {fileID: 1897104842}
     - target: {fileID: 5079047048841286207, guid: c15012a8668d042dda82b92ff920fc93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -10262,7 +10252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5079047048841286207, guid: c15012a8668d042dda82b92ff920fc93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+      value: ClosePauseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5079047048841286207, guid: c15012a8668d042dda82b92ff920fc93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -10270,7 +10260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5079047048841286207, guid: c15012a8668d042dda82b92ff920fc93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Managers.PauseManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5079047048841286207, guid: c15012a8668d042dda82b92ff920fc93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -10438,21 +10428,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1353019855}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1897104842}
-        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
-        m_MethodName: SwitchPauseStatus
+        m_TargetAssemblyTypeName: Managers.PauseManager, Assembly-CSharp
+        m_MethodName: ClosePauseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11313,6 +11291,7 @@ GameObject:
   - component: {fileID: 1353019859}
   - component: {fileID: 1353019858}
   - component: {fileID: 1353019857}
+  - component: {fileID: 1353019860}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -11403,6 +11382,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1353019860
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353019855}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1357899604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15318,7 +15309,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
   isPaused: 0
   pausePanel: {fileID: 1353019855}
+  pausePanelTransform: {fileID: 1130886872}
   inputPauseActionReference: {fileID: 5795721255360559743, guid: da81964affa674358b771840d6c6ffaf, type: 3}
+  motionDuration: 0.3
 --- !u!4 &1897104843
 Transform:
   m_ObjectHideFlags: 0

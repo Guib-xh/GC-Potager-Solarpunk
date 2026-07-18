@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartGameManager : MonoBehaviour
+namespace Managers
 {
-    public void StartGame()
+    public class StartGameManager : MonoBehaviour
     {
-        SceneManager.LoadScene(1);
+        public void StartGame()
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }

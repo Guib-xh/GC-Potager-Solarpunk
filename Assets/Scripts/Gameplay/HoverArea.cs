@@ -1,33 +1,36 @@
 using System;
 using UnityEngine;
 
-public class HoverArea : MonoBehaviour
-
+namespace Gameplay
 {
-    private Parcel _parcel;
-    
-    private void Awake()
-    {
-        _parcel = GetComponentInParent<Parcel>();
-    }
+    public class HoverArea : MonoBehaviour
 
-    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        private Parcel _parcel;
+
+        private void Awake()
         {
-            _parcel.EnableGlow();
-            other.GetComponent<Player>().hoveredParcel = _parcel;
+            _parcel = GetComponentInParent<Parcel>();
         }
-    }
-    
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+
+        private void OnTriggerEnter(Collider other)
         {
-            _parcel.DisableGlow();
-            if (_parcel == other.GetComponent<Player>().hoveredParcel)
+            if (other.CompareTag("Player"))
             {
-                other.GetComponent<Player>().hoveredParcel = null;
+                _parcel.EnableGlow();
+                other.GetComponent<Player>().hoveredParcel = _parcel;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                _parcel.DisableGlow();
+                if (_parcel == other.GetComponent<Player>().hoveredParcel)
+                {
+                    other.GetComponent<Player>().hoveredParcel = null;
+                }
             }
         }
     }

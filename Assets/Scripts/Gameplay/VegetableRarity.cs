@@ -11,19 +11,19 @@
     {
         public static float Weight(this VegetableRarity rarity) => rarity switch
         {
-            VegetableRarity.Common => 50f,
+            VegetableRarity.Common => 40f,
             VegetableRarity.Rare => 30f,
-            VegetableRarity.Epic => 15f,
-            VegetableRarity.Legendary => 5f,
+            VegetableRarity.Epic => 20f,
+            VegetableRarity.Legendary => 10f,
             _ => 0f
         };
         
-        public static float Points(this VegetableRarity rarity) => rarity switch
+        public static int Points(this VegetableRarity rarity) => rarity switch
         {
-            VegetableRarity.Common => 10,
-            VegetableRarity.Rare => 50,
-            VegetableRarity.Epic => 100,
-            VegetableRarity.Legendary => 200,
+            VegetableRarity.Common => 100,
+            VegetableRarity.Rare => 500,
+            VegetableRarity.Epic => 1000,
+            VegetableRarity.Legendary => 2000,
             _ => 0
         };
     }

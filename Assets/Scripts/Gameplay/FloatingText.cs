@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class FloatingText : MonoBehaviour
+namespace Gameplay
 {
-    public float destroyTime = 1f;
-    public Vector3 offset = new Vector3(0f, 2f, 0f);
-
-    void Start()
+    public class FloatingText : MonoBehaviour
     {
-        Destroy(gameObject, destroyTime);
-        
-        transform.localPosition += offset;
+        public float destroyTime = 1f;
+        public Vector3 offset = new Vector3(0f, 2f, 0f);
+
+        void Start()
+        {
+            Destroy(gameObject, destroyTime);
+
+            transform.localPosition += offset;
+        }
     }
 }

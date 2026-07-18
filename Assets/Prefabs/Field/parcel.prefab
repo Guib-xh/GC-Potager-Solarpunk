@@ -208,6 +208,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 62244908a8b06429fa8fd31d9fa67d0b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7232313134738383546}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 62244908a8b06429fa8fd31d9fa67d0b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8815269053640994304}
   m_SourcePrefab: {fileID: 100100000, guid: 62244908a8b06429fa8fd31d9fa67d0b, type: 3}
 --- !u!4 &8258871927498458980 stripped
 Transform:
@@ -254,16 +257,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParcelController
   vegetablesPool:
-  - prefab: {fileID: 2971549720000950982, guid: 8e967cdb9253f44d3b09adabb2d9bda7, type: 3}
+  - vegetableGameObject: {fileID: 2971549720000950982, guid: 8e967cdb9253f44d3b09adabb2d9bda7, type: 3}
     rarity: 0
-  - prefab: {fileID: 7754707891345903255, guid: ef57165148d354c62add7b8082cc5ec3, type: 3}
+  - vegetableGameObject: {fileID: 1737571079265868259, guid: d8c417d36122c42cb86a49cb46039a5f, type: 3}
     rarity: 1
-  - prefab: {fileID: 1737571079265868259, guid: d8c417d36122c42cb86a49cb46039a5f, type: 3}
+  - vegetableGameObject: {fileID: 7754707891345903255, guid: ef57165148d354c62add7b8082cc5ec3, type: 3}
     rarity: 2
-  - prefab: {fileID: 1275971724807716195, guid: 6896855f0c80b49be942952170cee1f4, type: 3}
+  - vegetableGameObject: {fileID: 1275971724807716195, guid: 6896855f0c80b49be942952170cee1f4, type: 3}
     rarity: 3
   vegetableSpawnOffset: 0.7
-  activeVegetable: {fileID: 0}
+  activeVegetableEntry:
+    vegetableGameObject: {fileID: 0}
+    rarity: 0
   floatingTextPrefab: {fileID: 5204494386493654508, guid: 091ab0d5eecfb46888832bda93b2320a, type: 3}
   seedOnSound: {fileID: 8300000, guid: 6839b4056496f425cbb4ba71f358a53b, type: 3}
   smokeRef: {fileID: 2447307117217482044}
@@ -364,3 +369,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8815269053640994304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779407856505822686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b14c9a77854ff3b223683e5e34095f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.FallingFieldStart
+  height: 20
+  fallingTime: 1
+  randomDelta: 1
+  currentEase: 30

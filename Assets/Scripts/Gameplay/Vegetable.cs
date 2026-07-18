@@ -1,64 +1,71 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public enum VegetableState {Growing, Ripe, Rotten}
-
-public class Vegetable : MonoBehaviour
+namespace Gameplay
 {
-
-    //Data
-    public VegetableState state = VegetableState.Growing;
-    public float growingDuration = 7f;
-    public float ripeDuration = 4f;
-    public float rottenDuration = 4f;
-    
-    private Animator _animator;
-    
-    public Parcel parcel;
-    
-    
-    private void Awake()
+    public enum VegetableState
     {
-        _animator = GetComponentInChildren<Animator>();
-        
+        Growing,
+        Ripe,
+        Rotten
     }
 
-    void Start()
+    public class Vegetable : MonoBehaviour
     {
-        StartCoroutine(GrowthCycle());
-    }
 
-    IEnumerator GrowthCycle()
-    {
-        yield return new WaitForSeconds(growingDuration);
-        
-        SetState(VegetableState.Ripe);
-        yield return new WaitForSeconds(ripeDuration);
+        //Data
+        public VegetableState state = VegetableState.Growing;
+        public float growingDuration = 7f;
+        public float ripeDuration = 4f;
+        public float rottenDuration = 4f;
 
-        SetState(VegetableState.Rotten);
-        yield return new WaitForSeconds(rottenDuration);
-        
-        parcel.activeVegetable = null;
-        Destroy(gameObject);
-    }
+        private Animator _animator;
 
-    public void SetState(VegetableState newState)
-    {
-        if (state == newState) return;
-        state = newState;
+        public Parcel parcel;
 
-        switch (newState)
+
+        private void Awake()
         {
-            case VegetableState.Growing:
-                _animator.SetTrigger("Grow");
-                break;
-            case VegetableState.Ripe:
-                _animator.SetTrigger("Pulse");
-                break;
-            case VegetableState.Rotten:
-                _animator.SetTrigger("Wilt");
-                break;
+            _animator = GetComponentInChildren<Animator>();
+
+        }
+
+        void Start()
+        {
+            StartCoroutine(GrowthCycle());
+        }
+
+        IEnumerator GrowthCycle()
+        {
+            yield return new WaitForSeconds(growingDuration);
+
+            SetState(VegetableState.Ripe);
+            yield return new WaitForSeconds(ripeDuration);
+
+            SetState(VegetableState.Rotten);
+            yield return new WaitForSeconds(rottenDuration);
+
+            parcel.activeVegetableEntry.vegetableGameObject = null;
+            Destroy(gameObject);
+        }
+
+        public void SetState(VegetableState newState)
+        {
+            if (state == newState) return;
+            state = newState;
+
+            switch (newState)
+            {
+                case VegetableState.Growing:
+                    _animator.SetTrigger("Grow");
+                    break;
+                case VegetableState.Ripe:
+                    _animator.SetTrigger("Pulse");
+                    break;
+                case VegetableState.Rotten:
+                    _animator.SetTrigger("Wilt");
+                    break;
+            }
         }
     }
 }
