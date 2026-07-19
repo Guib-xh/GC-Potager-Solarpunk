@@ -21,7 +21,6 @@ namespace Managers
             if (_isEndGame) return;
             if (gameTime <= 0f)
             {
-                Debug.Log("Game Over");
                 scoreManager.SaveSessionScore();
                 SceneManager.LoadScene(2);
                 _isEndGame = true;

@@ -1,4 +1,3 @@
-using System;
 using LitMotion;
 using TMPro;
 using UnityEngine;
@@ -7,10 +6,10 @@ namespace Managers
 {
     public class ScoreManager : MonoBehaviour
     {
-        int _score = 0;
+        int _score;
         float _displayedScore;
         public float countDuration = 1f;
-        public TextMeshProUGUI scoreValueGO;
+        public TextMeshProUGUI scoreValueTMP;
         
         MotionHandle _scoreHandle;
 
@@ -25,18 +24,15 @@ namespace Managers
                 .Bind(x =>
                 {
                     _displayedScore = x;
-                    scoreValueGO.text = Mathf.RoundToInt(x).ToString();
+                    scoreValueTMP.text = Mathf.RoundToInt(x).ToString();
                 });
-            
-            
-            scoreValueGO.text = _score.ToString();
         }
 
         void PunchScoreText()
         {
             LMotion.Punch.Create(Vector3.one, Vector3.one * 0.15f, 0.25f)
                 .WithFrequency(8)
-                .Bind(x => scoreValueGO.transform.localScale = x);
+                .Bind(x => scoreValueTMP.transform.localScale = x);
         }
 
         public void SaveSessionScore()

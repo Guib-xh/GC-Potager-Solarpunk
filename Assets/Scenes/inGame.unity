@@ -5753,7 +5753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   countDuration: 0.5
-  scoreValueGO: {fileID: 714201498}
+  scoreValueTMP: {fileID: 0}
 --- !u!1001 &715454570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5841,7 +5841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   countDuration: 0.5
-  scoreValueGO: {fileID: 714201498}
+  scoreValueTMP: {fileID: 714201498}
 --- !u!4 &715831903
 Transform:
   m_ObjectHideFlags: 0

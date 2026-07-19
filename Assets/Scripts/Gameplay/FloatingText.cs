@@ -10,7 +10,6 @@ namespace Gameplay
         void Start()
         {
             Destroy(gameObject, destroyTime);
-
             transform.localPosition += offset;
         }
     }

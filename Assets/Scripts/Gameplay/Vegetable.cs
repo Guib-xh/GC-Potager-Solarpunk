@@ -49,7 +49,7 @@ namespace Gameplay
             Destroy(gameObject);
         }
 
-        public void SetState(VegetableState newState)
+        void SetState(VegetableState newState)
         {
             if (state == newState) return;
             state = newState;

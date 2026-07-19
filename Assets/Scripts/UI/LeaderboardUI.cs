@@ -9,7 +9,7 @@ namespace UI
         public GameObject scoreRawPrefab;
         public Transform parent;
 
-        private List<GameObject> rows = new List<GameObject>();
+        private List<GameObject> _rows = new List<GameObject>();
 
         void OnEnable()
         {
@@ -20,18 +20,18 @@ namespace UI
                 GameObject row = Instantiate(scoreRawPrefab, parent);
                 row.GetComponent<ScoreRowUI>().pseudoTMP.text = score.pseudo;
                 row.GetComponent<ScoreRowUI>().scoreTMP.text = score.score.ToString();
-                rows.Add(row);
+                _rows.Add(row);
             }
         }
 
         void OnDisable()
         {
-            foreach (GameObject row in rows)
+            foreach (GameObject row in _rows)
             {
                 if (row != null) Destroy(row);
             }
 
-            rows.Clear();
+            _rows.Clear();
         }
 
     }

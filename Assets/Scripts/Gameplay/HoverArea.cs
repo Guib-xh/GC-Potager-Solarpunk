@@ -15,23 +15,23 @@ namespace Gameplay
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
-            {
-                _parcel.EnableGlow();
-                other.GetComponent<Player>().hoveredParcel = _parcel;
-            }
+            if (!other.CompareTag("Player")) return;
+            
+            _parcel.EnableGlow();
+            other.GetComponent<Player>().hoveredParcel = _parcel;
+            
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (!other.CompareTag("Player")) return;
+            
+            _parcel.DisableGlow();
+            if (_parcel == other.GetComponent<Player>().hoveredParcel)
             {
-                _parcel.DisableGlow();
-                if (_parcel == other.GetComponent<Player>().hoveredParcel)
-                {
-                    other.GetComponent<Player>().hoveredParcel = null;
-                }
+                other.GetComponent<Player>().hoveredParcel = null;
             }
+            
         }
     }
 }

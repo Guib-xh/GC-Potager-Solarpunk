@@ -1,4 +1,6 @@
 
+namespace Gameplay
+{
     public enum VegetableRarity
     {
         Common,
@@ -17,7 +19,7 @@
             VegetableRarity.Legendary => 10f,
             _ => 0f
         };
-        
+
         public static int Points(this VegetableRarity rarity) => rarity switch
         {
             VegetableRarity.Common => 100,
@@ -27,3 +29,4 @@
             _ => 0
         };
     }
+}

@@ -583,8 +583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -121, y: 165}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: -191.45087, y: 165}
+  m_SizeDelta: {x: 382.9017, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277273736
 MonoBehaviour:
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -775,7 +775,6 @@ GameObject:
   - component: {fileID: 323382512}
   - component: {fileID: 323382514}
   - component: {fileID: 323382513}
-  - component: {fileID: 323382515}
   m_Layer: 5
   m_Name: SaveScorePanel
   m_TagString: Untagged
@@ -805,8 +804,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 723.7444, y: 800}
+  m_AnchoredPosition: {x: -0.000015259, y: -0.00083697}
+  m_SizeDelta: {x: 876.08, y: 803.6057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323382513
 MonoBehaviour:
@@ -846,20 +845,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323382511}
   m_CullTransparentMesh: 1
---- !u!114 &323382515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323382511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59010a60f4e114d9ebabac65b3612790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EndGame
-  scoreValue: {fileID: 619332512}
-  pseudoInput: {fileID: 393488101}
 --- !u!1 &393488099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1224,6 @@ GameObject:
   - component: {fileID: 619332510}
   - component: {fileID: 619332513}
   - component: {fileID: 619332512}
-  - component: {fileID: 619332511}
   m_Layer: 5
   m_Name: scoreValue
   m_TagString: Untagged
@@ -1255,7 +1239,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619332509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 902}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1263,22 +1247,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 165}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 227.04236, y: 165}
+  m_SizeDelta: {x: 354.0847, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &619332511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619332509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b82b38cd629c944e0b5a730593253009, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  scoreValueGO: {fileID: 619332512}
 --- !u!114 &619332512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,8 +1304,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -1365,7 +1336,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 61.098755, w: 0}
+  m_margin: {x: 0, y: 0, z: -2.1467285, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2298,7 +2269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59010a60f4e114d9ebabac65b3612790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndGame
-  scoreValue: {fileID: 619332512}
+  scoreValueTMP: {fileID: 619332512}
   pseudoInput: {fileID: 393488101}
 --- !u!4 &1530838199
 Transform:
